@@ -23,7 +23,7 @@
       var b=f.querySelector('button[type=submit]');b.disabled=true;
       fetch(ep,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(r){
         if(!r.ok)throw 0;f.reset();show(f.id==='signup-form'?'Thank you. You are on the list.':'Thank you. Your message has been sent.');
-      }).catch(function(){show('Sorry, that did not go through. Please try again later.');}).finally(function(){b.disabled=false;});
+      }).catch(function(){s.innerHTML='Sorry, that did not go through. Please email <a href="mailto:johnwdavis79@gmail.com?subject=25%20Foreway">John W. Davis</a> directly.';s.classList.add('is-visible');s.focus();}).finally(function(){b.disabled=false;});
     });
   });
 })();
